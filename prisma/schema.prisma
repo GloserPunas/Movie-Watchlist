@@ -15,5 +15,4 @@ model users {
   email    String
   password String
 
-  @@ignore
 }

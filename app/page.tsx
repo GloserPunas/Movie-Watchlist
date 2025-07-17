@@ -9,7 +9,7 @@ import React, { useState } from "react";
 export default function Home() {
   const [showLoginForm, setShowLoginForm] = useState(false);
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-black">
       <main >
         <div className="relative w-full">
           <Image
@@ -17,7 +17,7 @@ export default function Home() {
           alt="Background Image"
           width={1000}
           height={500}
-          className="max-w-none w-full h-auto shadow-lg display-inline"
+          className="max-w-none w-full shadow-lg display-inline"
         />
         <div className="absolute top-0 left-0 w-full z-20">
           <Navbar/>
