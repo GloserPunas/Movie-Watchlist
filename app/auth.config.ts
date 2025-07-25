@@ -15,7 +15,7 @@ export const authConfig = {
         return Response.redirect(new URL('/homepage', nextUrl));
       }
       return true;
-    },
+    }, 
   },
   providers: [], 
 } satisfies NextAuthConfig;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 
 const geistSans = Geist({
@@ -18,19 +19,20 @@ export const metadata: Metadata = {
   description: "Store your watchlist here",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+type Props = {
+  children: ReactNode;
+};
+
+export default function RootLayout(
+ { children }: Props) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SessionProvider>
-          {children}
-        </SessionProvider>
+       
+        {children}
+      
       </body>
     </html>
   );

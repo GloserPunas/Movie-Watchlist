@@ -1,17 +1,18 @@
 'use client'
 
 import Link from "next/link";
-import { useActionState, useState } from "react";
+import { useActionState } from "react";
 import { login } from "@/lib/action";
 import { useSearchParams } from 'next/navigation';
 
 export default function LoginForm() {
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get('callbackUrl') || '/homepage';
-    const [errorMessage, loginAction, isPending] = useActionState(
+    const [errorMessage, loginAction] = useActionState(
       login,
       undefined,
       );
+    
     return (
 
         <form action = { loginAction } className="max-w-md mx-auto p-6 bg-white">

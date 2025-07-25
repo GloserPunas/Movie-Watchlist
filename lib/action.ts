@@ -1,12 +1,11 @@
 'use server'
 
-import { signIn } from "@/app/auth";
-import { AuthError } from "next-auth";
+import { signIn, auth } from "@/app/auth";
+import { AuthError } from "next-auth";;
 
 export async function login(prevState: string | undefined, formData: FormData) {
     try {
     await signIn('credentials', formData);
-    
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {

@@ -1,11 +1,12 @@
-"use client";
+"use server";
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useSession } from 'next-auth/react';
+import { auth } from '@/app/auth';
 
-export default function Navbar() {
-  const { data: session } = useSession();
+export default async function Navbar() {
+  //const { data: session } = useSession();
+  const  session = auth();
   
   return ( 
     <nav className="bg-black/80 p-4 w-full" >
@@ -28,16 +29,12 @@ export default function Navbar() {
           <li>
             <Link href="/" className="text-white hover:text-orange-500">About Us</Link>
           </li>
-          <li>
-            {session?.user ? (
-              <span className="text-white hover:text-orange-500">
-                {session.user.name}
-              </span>
-            ) : (
-              <Link href="/watchlist" className="text-white hover:text-orange-500">
-                Sign Up
-              </Link>
-            )}
+          <li> {session ? (
+            <Link href="" className="text-white hover:text-orange-500">
+              {session?.user?.name || 'Profile'}
+              </Link>)
+            : ( <Link href="/register" className="text-white hover:text-orange-500">Register</Link>)
+          }
           </li>
         </ul>
       </div>
