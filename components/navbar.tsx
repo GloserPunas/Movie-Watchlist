@@ -2,11 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { auth } from '@/app/auth';
 
 export default async function Navbar() {
-  //const { data: session } = useSession();
-  const  session = auth();
   
   return ( 
     <nav className="bg-black/80 p-4 w-full" >
@@ -29,12 +26,8 @@ export default async function Navbar() {
           <li>
             <Link href="/" className="text-white hover:text-orange-500">About Us</Link>
           </li>
-          <li> {session ? (
-            <Link href="" className="text-white hover:text-orange-500">
-              {session?.user?.name || 'Profile'}
-              </Link>)
-            : ( <Link href="/register" className="text-white hover:text-orange-500">Register</Link>)
-          }
+          <li>  
+            <Link href="/register" className="text-white hover:text-orange-500">Register</Link>
           </li>
         </ul>
       </div>
