@@ -5,3 +5,10 @@ export type User = {
     password: string;
 }
 
+export type Movie = {
+    movietitle: string;
+    moviedate: string;
+    movievote: string;
+    movieimage: string;
+};
+
