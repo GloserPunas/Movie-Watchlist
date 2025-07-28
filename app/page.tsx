@@ -20,7 +20,7 @@ export default function Home() {
           className="max-w-none w-full shadow-lg display-inline"
         />
         <div className="absolute top-0 left-0 w-full z-20">
-          <Navbar/>
+          <Navbar />
         </div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/60">
             <p className="text-lg mb-4 drop-shadow">Don&apos;t know where to store your watchlist? Come to us!</p>

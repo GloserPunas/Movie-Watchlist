@@ -1,11 +1,11 @@
-"use server";
+"use client";
 
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default async function Navbar() {
+export default function Navbar() {
   
-  return ( 
+  return (
     <nav className="bg-black/80 p-4 w-full" >
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white text-lg font-semibold">
@@ -27,7 +27,7 @@ export default async function Navbar() {
             <Link href="/" className="text-white hover:text-orange-500">About Us</Link>
           </li>
           <li>  
-            <Link href="/register" className="text-white hover:text-orange-500">Register</Link>
+            <Link href="/register" className="text-white hover:text-orange-500"> Sign Up </Link>
           </li>
         </ul>
       </div>
