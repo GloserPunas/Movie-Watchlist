@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function MovieCard() {
     return (
-        <div className="bg-white shadow-md rounded-lg overflow-hidden w-50 h-auto">
+        <div className="bg-white shadow-md rounded-lg overflow-hidden w-50 h-auto hover: scale-105 transition-transform duration-300">
             <Image src="/Breaking Bad.jpg" 
                 width={500}
                 height={300}

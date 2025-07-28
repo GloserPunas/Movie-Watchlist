@@ -5,8 +5,7 @@ import Image from 'next/image';
 import { auth } from '@/app/auth';
 
 export default async function Navbar() {
-  //const { data: session } = useSession();
-  const  session = auth();
+  const session = await auth();
   
   return ( 
     <nav className="bg-black/80 p-4 w-full" >
